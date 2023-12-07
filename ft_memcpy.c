@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juca <juca@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/04 12:03:03 by juca              #+#    #+#             */
-/*   Updated: 2023/12/07 15:52:27 by juca             ###   ########.fr       */
+/*   Created: 2023/12/07 15:16:59 by juca              #+#    #+#             */
+/*   Updated: 2023/12/07 15:44:33 by juca             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-#include <stddef.h>
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s);
-int		ft_isdigit(int c);
-int		ft_isalpha(int c);
-int		ft_isprint(int c);
-int		ft_isascii(int c);
-void	*ft_memset(void *s, int c, size_t n);
-void	ft_bzero(void *s, size_t n);
-
-size_t ft_strlcpy(char *dest, const char *src, size_t size);
-
-#endif
+void	*ft_memcpy(void *dest, const void *src, size_t num)
+{
+	const unsigned char *aux_src = src;
+	unsigned char *aux_dest = dest;
+	size_t	i;
+	
+	i = 0;
+	if(num == 0 || dest == src)
+		return (dest);
+	while (i < num)
+	{
+		aux_dest[i] = aux_src[i];
+		i++;
+	}
+	return (dest);
+}
