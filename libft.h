@@ -6,7 +6,7 @@
 /*   By: juca <juca@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:03:03 by juca              #+#    #+#             */
-/*   Updated: 2024/01/09 12:43:15 by juca             ###   ########.fr       */
+/*   Updated: 2024/01/10 12:50:14 by juca             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,6 @@ char	*ft_strrchr(const char *s, int c);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 char	*ft_strnstr(const char *s1, const char *s2, size_t len);
+void	*ft_calloc(size_t num_ele, size_t ele_size);
+char	*ft_strdup(const char *str);
 #endif
