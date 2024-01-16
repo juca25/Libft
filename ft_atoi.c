@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juca <juca@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sacorder <sacorder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 16:58:42 by juca              #+#    #+#             */
-/*   Updated: 2023/12/07 17:05:27 by juca             ###   ########.fr       */
+/*   Updated: 2024/01/16 13:46:11 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *nptr)
 {
-	int	i;
-	int	signo;
+	int					i;
+	int					signo;
 	unsigned long long	nbr;
 
 	nbr = 0;
@@ -27,7 +27,7 @@ int	ft_atoi(const char *nptr)
 		signo = -1;
 	if (nptr[i] == '-' || nptr[i] == '+')
 		i++;
-	while(nptr[i] >= '0' && nptr[i] <= '9')
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		nbr = nbr * 10 + (nptr[i] - '0');
 		i++;

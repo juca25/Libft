@@ -3,16 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juca <juca@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sacorder <sacorder@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:49:26 by juca              #+#    #+#             */
-/*   Updated: 2024/01/09 12:06:38 by juca             ###   ########.fr       */
+/*   Updated: 2024/01/16 14:25:28 by sacorder         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strrchr(const char *s, int c)
 {
-	const char* last = NULL;
+	char* last = NULL;
 	int	i;
 	
 	i = 0;
