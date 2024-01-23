@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sacorder <sacorder@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juca <juca@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:03:03 by juca              #+#    #+#             */
-/*   Updated: 2024/01/19 12:39:45 by sacorder         ###   ########.fr       */
+/*   Updated: 2024/01/23 14:00:13 by juca             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <unistd.h>
 
 size_t	ft_strlen(const char *s);
 int		ft_isdigit(int c);
@@ -41,4 +42,8 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len);
 void	*ft_calloc(size_t num_ele, size_t ele_size);
 char	*ft_strdup(const char *str);
 char	*ft_substr(char const *src, unsigned int start, size_t len);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
 #endif
