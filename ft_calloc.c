@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sacorder <sacorder@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-ser <juan-ser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 11:56:50 by juca              #+#    #+#             */
-/*   Updated: 2024/01/16 13:48:13 by sacorder         ###   ########.fr       */
+/*   Updated: 2024/01/24 13:08:30 by juan-ser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 void	*ft_calloc(size_t num_ele, size_t ele_size)
 {
-	void	*arr;
-	int		i;
+	void			*arr;
+	unsigned long	i;
 
-	if (num_ele <= 0 || ele_size <= 0)
-		return (NULL);
 	arr = malloc(num_ele * ele_size);
+	if (!arr)
+		return (NULL);
 	if (arr != NULL)
 	{
 		i = 0;

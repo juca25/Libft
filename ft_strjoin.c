@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sacorder <sacorder@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: juan-ser <juan-ser@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/19 12:47:38 by sacorder          #+#    #+#             */
-/*   Updated: 2024/01/19 13:12:56 by sacorder         ###   ########.fr       */
+/*   Updated: 2024/01/24 12:39:02 by juan-ser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*new_str(size_t n)
 {
 	char	*str;
 
-	str = (char *)malloc(sizeof(char) * (n +1));
+	str = (char *)malloc(sizeof(char) * (n + 2));
 	if (!str)
 		return (NULL);
 	return (str);
