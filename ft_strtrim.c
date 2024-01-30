@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juan-ser <juan-ser@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/07 13:26:02 by juca              #+#    #+#             */
-/*   Updated: 2024/01/30 15:13:44 by juan-ser         ###   ########.fr       */
+/*   Created: 2024/01/23 13:38:38 by juca              #+#    #+#             */
+/*   Updated: 2024/01/30 16:20:38 by juan-ser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,25 @@
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *dest, const char *src, size_t size)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	i;
+	size_t	j;
+	size_t	trim_len;
+	char	*trim;
 
+	if (s1 == NULL || set == NULL)
+		return (NULL);
 	i = 0;
-	if (size == 0)
-		return (ft_strlen(src));
-	while (src[i] != 0 && i < size - 1)
-	{
-		dest[i] = src[i];
+	j = ft_strlen(s1);
+	while (i < j && ft_strchr(set, s1[i]) != NULL)
 		i++;
-	}
-	dest[i] = '\0';
-	return (ft_strlen(src));
+	while (j > i && ft_strchr(set, s1[j - 1]) != NULL)
+		j--;
+	trim_len = j - i;
+	trim = (char *)malloc(trim_len + 1);
+	if (trim == NULL)
+		return (NULL);
+	ft_strlcpy(trim, s1 + i, trim_len + 1);
+	return (trim);
 }

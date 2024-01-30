@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juan-ser <juan-ser@student.42.fr>          +#+  +:+       +#+        */
+/*   By: juan-ser <juan-ser@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:49:26 by juca              #+#    #+#             */
-/*   Updated: 2024/01/24 13:01:32 by juan-ser         ###   ########.fr       */
+/*   Updated: 2024/01/30 20:57:12 by juan-ser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ char	*ft_strrchr(const char *s, int c)
 	last = NULL;
 	while (*s != 0)
 	{
-		if (*s == c)
+		if (*s == (char)c)
 			last = (char *)s;
 		s++;
 	}
-	if (c == 0)
+	if ((char)c == 0)
 		return ((char *)s);
 	return ((char *)last);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juca <juca@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: juan-ser <juan-ser@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 12:31:20 by juca              #+#    #+#             */
-/*   Updated: 2024/01/23 13:36:09 by juca             ###   ########.fr       */
+/*   Updated: 2024/01/30 21:03:43 by juan-ser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,16 +21,21 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 
 	s1_len = ft_strlen(s1);
 	s2_len = ft_strlen(s2);
-	if (s2_len == 0)
+	if (s2_len == 0 || s2 == s1)
 		return ((char *)s1);
 	i = 0;
-	while (i < len && i < s1_len - s2_len + 1)
+	while (s1[i] && i < len && !(s1_len < s2_len || len < s2_len))
 	{
 		j = 0;
-		while (j < s2_len && s1[i + j] == s2[j])
-			j++;
-		if (j == s2_len)
-			return ((char *)(s1 + i));
+		if (s1[i] == s2[j])
+		{
+			while (s1[i + j] == s2[j] && s1[i + j] && (i + j) < len)
+			{
+				j++;
+				if (s2[j] == '\0')
+					return ((char *)(s1 + i));
+			}
+		}
 		i++;
 	}
 	return (NULL);
