@@ -6,7 +6,7 @@
 /*   By: juan-ser <juan-ser@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/20 13:15:22 by juan-ser          #+#    #+#             */
-/*   Updated: 2024/02/20 13:26:19 by juan-ser         ###   ########.fr       */
+/*   Updated: 2024/02/20 14:01:43 by juan-ser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,25 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*new_list;
-	t_list	*new_node;
+	t_list	*aux;
+	t_list	*new_lst;
+	void	*set;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
-	new_list = NULL;
+	new_lst = NULL;
 	while (lst)
 	{
-		new_node = ft_lstnew(f(lst->content));
-		if (!new_node)
+		set = f(lst->content);
+		aux = ft_lstnew(set);
+		if (!aux)
 		{
-			ft_lstclear(&new_list, del);
-			return (NULL);
+			del(set);
+			ft_lstclear(&new_lst, del);
+			return (new_lst);
 		}
-		ft_lstadd_back(&new_list, new_node);
+		ft_lstadd_back(&new_lst, aux);
 		lst = lst->next;
 	}
-	return (new_list);
+	return (new_lst);
 }
