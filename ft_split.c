@@ -6,12 +6,13 @@
 /*   By: juan-ser <juan-ser@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:13:11 by juan-ser          #+#    #+#             */
-/*   Updated: 2024/01/31 11:36:29 by juan-ser         ###   ########.fr       */
+/*   Updated: 2024/02/20 13:13:20 by juan-ser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-int	fill(char **arr, char const *s, char c)
+
+static int	fill(char **arr, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -37,7 +38,8 @@ int	fill(char **arr, char const *s, char c)
 	}
 	return (0);
 }
-size_t count_size(char const *s, char c)
+
+static size_t	count_size(char const *s, char c)
 {
 	size_t	size;
 	size_t	i;
@@ -57,20 +59,39 @@ size_t count_size(char const *s, char c)
 	}
 	return (size);
 }
+
+static void	free_split(char **arr)
+{
+	int	i;
+
+	i = 0;
+	if (arr == NULL)
+		return ;
+	while (arr[i])
+	{
+		free(arr[i]);
+		arr[i] = NULL;
+		i++;
+	}
+	free(arr);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	size;
-	char 	**arr;
+	char	**arr;
 
 	if (NULL == s)
 		return (NULL);
-	size = 0;
 	size = count_size(s, c);
-	arr = malloc((size + 1) * sizeof(char *));
-	if (NULL == arr)
+	arr = (char **)malloc((size + 1) * sizeof(char *));
+	if (arr == NULL)
 		return (NULL);
-	arr[size] = 0;
+	arr[size] = NULL;
 	if (fill(arr, s, c))
+	{
+		free_split(arr);
 		return (NULL);
+	}
 	return (arr);
 }
