@@ -6,7 +6,7 @@
 /*   By: juan-ser <juan-ser@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/31 10:58:28 by juan-ser          #+#    #+#             */
-/*   Updated: 2024/02/01 14:43:16 by juan-ser         ###   ########.fr       */
+/*   Updated: 2024/03/18 11:01:45 by juan-ser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strrev(char *str)
 	char	temp;
 
 	i = 0;
-	j = strlen(str) - 1;
+	j = ft_strlen(str) - 1;
 	while (i < j)
 	{
 		temp = str[i];

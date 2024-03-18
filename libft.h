@@ -6,7 +6,7 @@
 /*   By: juan-ser <juan-ser@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 12:03:03 by juca              #+#    #+#             */
-/*   Updated: 2024/02/20 13:17:21 by juan-ser         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:08:25 by juan-ser         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
-int		atoi(const char *nptr);
+int		ft_atoi(const char *nptr);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 char	*ft_strchr(const char *s, int c);
@@ -51,6 +51,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	*ft_strjoin(char const *s1, char const *s2);
+int		ft_isalnum(int c);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 typedef struct s_list
 {
